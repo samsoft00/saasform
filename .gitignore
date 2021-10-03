@@ -1,12 +1,5 @@
-data/db*
-
-node_module
-secrets.local
-JOURNAL.md
-
-data/config/saasform.yml
-data/config/saasform.*.yml
-
-.idea
-data/themes/fresh-sso/dist/
-data/themes/fresh/dist/
+.nyc_output
+coverage
+node_modules
+npm-debug.log
+package-lock.json

@@ -1,3 +1,0 @@
-text: "{{ alert.text }}"
-link_url: "{{ alert.link_url }}"
-link_text: "{{ alert.link_text }}"
