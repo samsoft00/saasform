@@ -44,7 +44,7 @@ exports = module.exports = session;
 class StoreWrapper extends Store {
   constructor(obj) {
     super()
-    this.obj = obj ?? new MemoryStore()
+    this.obj = obj || new MemoryStore()
   }
 
   hashedSid(sid) {
@@ -204,7 +204,7 @@ function session(options) {
   var keys = opts.keys
 
   // extract JWT data from req when generating a new JWT token
-  var jwtFromReq = opts.jwtFromReq ?? (() => ({}))
+  var jwtFromReq = opts.jwtFromReq || (() => ({}))
 
   if (typeof generateId !== 'function') {
     throw new TypeError('genid option must be a function');
@@ -271,7 +271,7 @@ function session(options) {
     // }
     const jwtData = jwtFromReq(req)
     req.sessionID = generateId(req, jwtData);
-    req.session = new JwtSession(req, existingData ?? {});
+    req.session = new JwtSession(req, existingData || {});
     req.session.cookie = new Cookie(cookieOptions);
 
     if (cookieOptions.secure === 'auto') {
